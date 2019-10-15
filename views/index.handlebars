@@ -1,9 +1,16 @@
 <div class="container">
-  <h1>
-    BURGER BURGER!
-  </h1>
+  <div class="card mb-3">
+    <img
+      src="/assets/img/bobs-burgers.jpg"
+      class="card-img-top"
+      alt="bobs-burgers"
+    />
+  </div>
   <div class="row">
     <div class="col-6">
+      <h3>
+        Burgers to eat
+      </h3>
       <ul class="list-group">
         {{#each burgers}}
           {{#unless devoured}}
@@ -24,10 +31,13 @@
       </ul>
     </div>
     <div class="col-6">
+      <h3>
+        Burgers I've eaten
+      </h3>
       <ul class="list-group">
         {{#each burgers}}
           {{#if devoured}}
-            <li class="list-group-item">
+            <li class="list-group-item strike">
               {{id}}
               -
               {{burger_name}}
@@ -51,8 +61,13 @@
             class="form-control"
             type="text"
             placeholder="Enter the name of a burger..."
+            id="burg"
           />
-          <button type="submit" class="btn btn-outline-warning subButt">
+          <button
+            type="submit"
+            class="btn btn-outline-warning subButt"
+            id="newBurger"
+          >
             Submit
           </button>
         </div>
@@ -65,13 +80,27 @@
        var id = $(this).attr("data-id");
         var devouredBurger = {
             devoured: 1
-        }
+        };
        $.ajax("/api/isdevoured/" + id, {
            type: "PUT",
-           data: devouredBurger,
+           data: devouredBurger
        }).then(function() {
            location.reload();
             console.log("Burger has been devoured!")
        });
+   });
+
+   $("#newBurger").on("click", function(e) {
+       e.preventDefault();
+        var aNewBurger = {
+            burger_name: $("#burg").val().trim()
+        };
+        $.ajax("/api/addburger", {
+            type: "POST",
+            data: aNewBurger
+        }).then(function(){
+            location.reload();
+            console.log("A new challenger!");
+        })
    });
 </script>

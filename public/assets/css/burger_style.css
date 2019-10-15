@@ -1,5 +1,13 @@
-h1 {
-    margin: 1em 0 2em 0;
+
+.bg {
+    background-color: #e6af5d;
+}
+.container {
+    background-color: whitesmoke;
+}
+h3 {
+    text-align: center;
+    margin: .5em 0 .5em 0;
 }
 h2 {
     margin-top: 3em;
@@ -9,4 +17,7 @@ h1, h2 {
 }
 .subButt{
     margin: 1em 0;
+}
+.strike {
+    text-decoration: line-through;
 }

@@ -20,15 +20,6 @@ router.post("/api/addburger", (req, res) => {
     });
 });
 
-router.put("/api/burgers/:id", (req, res) => {
-    burger.burgerUpdate(req.body.burger_name, req.params.id, (result) => {
-        if (result.changedRows === 0) {
-            return res.status(404).end();
-        }
-        res.status(200).end();
-    });
-});
-
 router.put("/api/isdevoured/:id", (req, res) => {
     burger.eatUpdate(req.body.devoured, req.params.id, (result) => {
         if (result.changedRows === 0) {

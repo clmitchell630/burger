@@ -12,11 +12,6 @@ var burger = {
             cb(res);
         });
     },
-    burgerUpdate: function (userInput, targetId, cb) {
-        orm.updateOne("burgers", "burger_name", userInput, "id", targetId, (res) => {
-            cb(res);
-        });
-    },
     eatUpdate: function (eatStatus, targetId, cb) {
         orm.updateOne("burgers", "devoured", eatStatus, "id", targetId, (res) => {
             cb(res);
