@@ -1,0 +1,12 @@
+h1 {
+    margin: 1em 0 2em 0;
+}
+h2 {
+    margin-top: 3em;
+}
+h1, h2 {
+    text-align: center;
+}
+.subButt{
+    margin: 1em 0;
+}
