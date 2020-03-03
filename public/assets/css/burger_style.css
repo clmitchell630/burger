@@ -1,9 +1,16 @@
-
-.bg {
-    background-color: #e6af5d;
+body {
+    color: #c9c9c9;
 }
+.bg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #333333;
+}
+
 .container {
-    background-color: whitesmoke;
+    background-color: #333333;
 }
 h3 {
     text-align: center;
@@ -20,4 +27,25 @@ h1, h2 {
 }
 .strike {
     text-decoration: line-through;
+}
+
+.h-style {
+    min-height: 20vh;
+    background-color: #1f1f1f;
+}
+
+.h-style i {
+    display: flex;
+    justify-content: center;
+    padding: 5vh 0;
+    text-align: center;
+    color: #c9c9c9;
+    font-size: 200px;
+}
+
+.aa-a {
+    background-color: #1f1f1f;
+}
+#burg {
+    border-color: #ffc107;
 }
